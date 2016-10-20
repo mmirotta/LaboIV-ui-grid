@@ -1,6 +1,8 @@
 angular
   .module('app')
-  .controller('ConfiguradoTP', function($scope, data, i18nService, uiGridConstants) {
+  .controller('ConfiguradoTP', function($scope, data, i18nService, uiGridConstants, NgMap) {
+    $scope.googleMapsUrl="";
+
     $scope.titulo = "Configuracion Campos";
     // Objeto de configuracion de la grilla.
     $scope.gridOptions = {};
@@ -16,12 +18,9 @@ angular
     data.data100().then(function(rta){
       // Cargo los datos en la grilla.
       $scope.gridOptions.data = rta;
-      console.info(rta);
     });
 
-    console.log(uiGridConstants);
-
-        function columnDefs () {
+    function columnDefs () {
       return [
         { field: 'id', name: '#', width: 45},
         { field: 'avatar', name: 'Avatar', cellTemplate: '<img src="{{COL_FIELD}}" style="width:30px"></img>', width: 45},
@@ -45,13 +44,22 @@ angular
           //filtro de los datos
           ,cellFilter: 'sexoTP'
         },
-        { field: 'fechaNacimiento', name: 'fechaNacimiento'
+        { field: 'fechaNacimiento', name: 'Fecha Nac'
           ,type: 'date'
           ,cellFilter: "date: 'dd-MM-yyyy'"
         },
-        { field: 'sueldoPretendido', name: 'sueldoPretendido'},
+        { field: 'sueldoPretendido', name: 'Sueldo'},
         { field: 'amigos', name: 'amigos'},
-        { field: 'aplicaciones', name: 'aplicaciones'}
+        { field: 'aplicaciones', name: 'aplicaciones'},
+        { name: 'Maps', cellTemplate: '<button class="btn btn-primary" ng-click="grid.appScope.localizar(row.entity)">Maps</button>', width: 45}
       ];
+    };
+
+    $scope.localizar = function(datos){
+          NgMap.getMap().then(function(map) {
+      console.log(map.getCenter());
+      console.log('markers', map.markers);
+      console.log('shapes', map.shapes);
+    });
     }
   })
