@@ -24,11 +24,13 @@ angular
         function columnDefs () {
       return [
         { field: 'id', name: '#', width: 45},
-        { field: 'avatar', name: 'Avatar'},
+        { field: 'avatar', name: 'Avatar', cellTemplate: '<img src="{{COL_FIELD}}" style="width:30px"></img>', width: 45},
+        { field: 'foto', name: 'Foto', cellTemplate: '<img src="{{COL_FIELD}}" style="width:20px"></img>', width: 45},
         { field: 'nombre', name: 'nombre'
           ,enableFiltering: false
         },
         { field: 'apellido', name: 'apellido'},
+        
         { field: 'email', name: 'mail'},
         { field: 'sexo', name: 'sexo'
         // filtro de busqueda.
@@ -46,7 +48,10 @@ angular
         { field: 'fechaNacimiento', name: 'fechaNacimiento'
           ,type: 'date'
           ,cellFilter: "date: 'dd-MM-yyyy'"
-        }
+        },
+        { field: 'sueldoPretendido', name: 'sueldoPretendido'},
+        { field: 'amigos', name: 'amigos'},
+        { field: 'aplicaciones', name: 'aplicaciones'}
       ];
     }
   })
