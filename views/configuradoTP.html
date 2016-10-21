@@ -4,7 +4,13 @@
     ui-grid-pagination
     ui-grid-resize-columns
   ></div>
-  	<div map-lazy-load="https://maps.google.com/maps/api/js" ap-lazy-load-params="{{googleMapsUrl}}">
-	  <ng-map center="41,-87" zoom="3"></ng-map>
+  <div ui-grid="gridAmigosOptions" class="myGrid" style="width:100%" ng-if="verAmigos"
+    ui-grid-pagination
+    ui-grid-resize-columns
+  ></div>
+  	<div map-lazy-load="https://maps.google.com/maps/api/js" ng-if='verMapa'>
+	  <ng-map center="41,-87" zoom="3">
+	  <marker position="[{{latitud}}, {{longitud}}]" title="marker" animation="Animation.DROP"></marker>
+		</ng-map>
 	</div>
 </div>
