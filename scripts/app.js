@@ -8,7 +8,8 @@ angular
     'ui.grid.exporter',
     'ui.grid.edit',
     'ngMap'
-  ])
+    ]
+    )
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('simple');
@@ -24,10 +25,10 @@ angular
       templateUrl: 'views/paginada.html',
       controller:'PaginadaCtrl'
     })
-    .state('configuradoTP', {
-      url: '/configuradoTP',
-      templateUrl: 'views/configuradoTP.html',
-      controller:'ConfiguradoTP'
+    .state('conf', {
+      url: '/conf',
+      templateUrl: 'views/config.html',
+      controller:'ConfCtrl'
     })
     .state('exportar', {
       url: '/exportar',
@@ -38,5 +39,9 @@ angular
       url: '/modificar',
       templateUrl: 'views/modificar.html',
       controller:'ModificarCtrl'
+    }).state('ConfiguradoTP', {
+      url: '/ConfiguradoTP',
+      templateUrl: 'views/ConfiguradoTP.html',
+      controller:'ConfiguradoTP'
     })
   });

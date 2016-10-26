@@ -1,16 +1,27 @@
 <div>
   <h3>{{titulo}}</h3>
-  <div ui-grid="gridOptions" class="myGrid" style="width:100%"
+  <div ui-grid="gridOptions" class="myGrid"
     ui-grid-pagination
     ui-grid-resize-columns
   ></div>
-  <div ui-grid="gridAmigosOptions" class="myGrid" style="width:100%" ng-if="verAmigos"
+  <div ng-if="map">
+    <ng-map center="[{{Lat}}, {{Log}}]" >
+      <marker icon="{{customIcon}}" position ="[{{Lat}}, {{Log}}]" title="{{Nombre}}" animation="Animation.DROP" ></marker>
+    </ng-map>
+  </div>
+
+ <div ng-if="amigos">
+   <ng-map center="[{{Lat}}, {{Log}}]" >
+      <marker icon="{{customIcon}}" position ="[{{Lat}}, {{Log}}]" title="{{Nombre}}" animation="Animation.DROP" ></marker>
+  <div ng-repeat="amigo in listadoAmigos">
+      <marker  icon="{{amigo.avatar}}" position ="[{{amigo.latitud}}, {{amigo.longitud}}]"  animation="Animation.DROP" ></marker>
+      </ng-map>
+      </div>
+
+  </div>
+
+  <div ng-if="friend" ui-grid="gridAmigos" class="myGrid"
     ui-grid-pagination
-    ui-grid-resize-columns
-  ></div>
-  	<div map-lazy-load="https://maps.google.com/maps/api/js" ng-if='verMapa'>
-	  <ng-map center="41,-87" zoom="3">
-	  <marker position="[{{latitud}}, {{longitud}}]" title="marker" animation="Animation.DROP"></marker>
-		</ng-map>
-	</div>
+    ui-grid-resize-columns>
+  </div>
 </div>

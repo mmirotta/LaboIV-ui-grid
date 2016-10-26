@@ -1,0 +1,4 @@
+<div>
+  <div ui-grid="gridOptions" class="myGrid"></div>
+  <div id="map"></div>
+</div>

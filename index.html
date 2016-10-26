@@ -4,6 +4,8 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -12,8 +14,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <style type="text/css">
           .myGrid {
-              width: 700px;
-              height: 400px;
+              width: 1400px;
+              height: 800px;
             }
 
         </style>
@@ -54,9 +56,10 @@
       <ul class="nav navbar-nav">
         <li><a ui-sref="simple">Grilla Simple</a></li>
         <li><a ui-sref="paginada">Grilla Paginada</a></li>
-        <li><a ui-sref="configuradoTP">Config Campos</a></li>
+        <li><a ui-sref="conf">Config Campos</a></li>
         <li><a ui-sref="exportar">Exportar Datos</a></li>
         <li><a ui-sref="modificar">Modificacion</a></li>
+         <li><a ui-sref="ConfiguradoTP">ConfiguradoTP</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -81,8 +84,7 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/pdfmake/build/pdfmake.min.js"></script>
     <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
-    <script src="bower_components/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA-YoytAJAka4qo5299HSi-hi3BXYssT8E"></script>
+
     <!--
     <script src="http://ui-grid.info/release/ui-gridconfin.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -94,11 +96,13 @@
     <script src="scripts/controllers/simple.js"></script>
     <script src="scripts/controllers/paginada.js"></script>
     <script src="scripts/controllers/conf.js"></script>
-    <script src="scripts/controllers/configuradoTP.js"></script>
     <script src="scripts/controllers/exportar.js"></script>
     <script src="scripts/controllers/modificar.js"></script>
+      <script src="scripts/controllers/ConfiguradoTP.js"></script>
     <script src="scripts/services/data.js"></script>
     <script src="scripts/services/filtros.js"></script>
+<script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+     <script       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_61xSHMl2pSoLcQe7_8tZZXFnF4e3SCA&callback=initMap">></script>
     <!-- endbuild -->
 </body>
 </html>
