@@ -12,62 +12,47 @@ angular
     $scope.gridOptions.enableFiltering = true;
 
 
- $scope.GpsAmigos=function(row){
-   $scope.Lat = parseFloat(row.latitud);
-   $scope.Log = parseFloat(row.logitud);
-    $scope.avatar=row.avatar;
-   $scope.customIcon = {
-        "scaledSize": [32, 32],
-        "url":  $scope.avatar
-    };
-$scope.listado = row.amigos;
-$scope.listado.forEach(function(hola){
-hola.avatar={
-        "scaledSize": [32, 32],
-        "url":  hola.avatar
-    };
-
-
-});
-
-
-$scope.listadoAmigos = $scope.listado;
-console.info($scope.listadoAmigos);
-$scope.map=false;
-$scope.amigos=true;
-
- NgMap.getMap().then(function (map) {
-          //console.log(map.getBounds().toString());
+    $scope.GpsAmigos=function(row){
+      $scope.Lat = parseFloat(row.latitud);
+      $scope.Log = parseFloat(row.logitud);
+      $scope.avatar=row.avatar;
+      $scope.customIcon = {
+          "scaledSize": [32, 32],
+          "url":  $scope.avatar
+      };
+      $scope.listado = row.amigos;
+      $scope.listado.forEach(function(hola){
+        hola.avatar={
+                "scaledSize": [32, 32],
+                "url":  hola.avatar
+            };
       });
+      $scope.listadoAmigos = $scope.listado;
+      $scope.map=false;
+      $scope.amigos=true;
 
-}
+      NgMap.getMap().then(function (map) {
+            //console.log(map.getBounds().toString());
+      });
+    }
 
     $scope.MostrarData= function(row){
-        console.info("Datos",row);
-      console.info("Longitud",row.logitud);
-      console.info("Latitud", row.latitud);
       $scope.map = true;
       $scope.Lat = parseFloat(row.latitud);
       $scope.Log = parseFloat(row.logitud);
       $scope.Nombre = row.nombre;
       $scope.avatar=row.avatar;
-$scope.customIcon = {
-        "scaledSize": [32, 32],
-        "url":  $scope.avatar
-    };
-
-    console.info($scope.customIcon);
-
+      $scope.customIcon = {
+              "scaledSize": [32, 32],
+              "url":  $scope.avatar
+          };
       NgMap.getMap().then(function (map) {
           //console.log(map.getBounds().toString());
       });
-    
+    };
 
-};
-
-   $scope.Amigos= function(data){
-  
-    $scope.friend = true;
+    $scope.Amigos= function(data){
+      $scope.friend = true;
       $scope.Listado = data.amigos;
       console.info($scope.Listado);
       //$scope.titulo = "Amigos";
@@ -83,45 +68,38 @@ $scope.customIcon = {
       i18nService.setCurrentLang('es');
 
       $scope.gridAmigos.data = $scope.Listado;
+    }
 
 
     $scope.MostrarData= function(row){
-      console.info("Latitud",row.latitud);
-      console.info("Longitud",row.logitud);
       $scope.lat=row.latitud;
       $scope.lon=row.logitud;
       $scope.avatar=row.avatar;
       $scope.nombre=row.nombre;
-           $scope.avatar=row.avatar;
-$scope.customIcon = {
-        "scaledSize": [150, 150],
-        "url":  $scope.avatar
-    };
-
+      $scope.avatar=row.avatar;
+      $scope.customIcon = {
+              "scaledSize": [150, 150],
+              "url":  $scope.avatar
+          };
     }
 
 
 
- $scope.Mapa=function (row){
-      console.info("Puto",row);
-      console.info("Longitud",row.logitud);
-      console.info("Latitud", row.latitud);
+    $scope.Mapa=function (row){
       $scope.map = true;
       $scope.Lat = parseFloat(row.latitud);
       $scope.Log = parseFloat(row.logitud);
-     $scope.avatar=row.avatar;
+      $scope.avatar=row.avatar;
       $scope.Nombre = row.nombre;
-$scope.customIcon = {
+      $scope.customIcon = {
         "scaledSize": [150, 150],
         "url":  $scope.avatar
-    };
+      };
       NgMap.getMap().then(function (map) {
           //console.log(map.getBounds().toString());
       });
-}
 
-
-};
+    };
 
 
     // Configuracion del idioma.
@@ -133,10 +111,8 @@ $scope.customIcon = {
       console.info(rta);
     });
 
-    console.log(uiGridConstants);
-
-  function columAmigos () {
-  return [
+    function columAmigos () {
+    return [
         { field: 'id', name: '#', width: 55},
         { field: 'nombre', name: 'nombre'
           ,enableFiltering: false

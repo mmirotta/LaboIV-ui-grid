@@ -1,27 +1,39 @@
 <div>
   <h3>{{titulo}}</h3>
-  <div ui-grid="gridOptions" class="myGrid"
-    ui-grid-pagination
-    ui-grid-resize-columns
-  ></div>
-  <div ng-if="map">
-    <ng-map center="[{{Lat}}, {{Log}}]" >
-      <marker icon="{{customIcon}}" position ="[{{Lat}}, {{Log}}]" title="{{Nombre}}" animation="Animation.DROP" ></marker>
-    </ng-map>
-  </div>
-
- <div ng-if="amigos">
-   <ng-map center="[{{Lat}}, {{Log}}]" >
-      <marker icon="{{customIcon}}" position ="[{{Lat}}, {{Log}}]" title="{{Nombre}}" animation="Animation.DROP" ></marker>
-  <div ng-repeat="amigo in listadoAmigos">
-      <marker  icon="{{amigo.avatar}}" position ="[{{amigo.latitud}}, {{amigo.longitud}}]"  animation="Animation.DROP" ></marker>
-      </ng-map>
+  <div class="row">
+    <div class="col-lg-7">
+      <div ui-grid="gridOptions" class="myGrid" style="width:100%"
+        ui-grid-pagination
+        ui-grid-resize-columns
+      ></div>
+    </div>
+    <div class="col-lg-5">
+      <div ng-if="map">
+        <ng-map center="[{{Lat}}, {{Log}}]" style="width:100%">
+          <marker icon="{{customIcon}}" position ="[{{Lat}}, {{Log}}]" title="{{Nombre}}" animation="Animation.DROP" ></marker>
+        </ng-map>
       </div>
-
+    </div>
   </div>
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <div ng-if="amigos" style="width:100%">
+        <ng-map center="[{{Lat}}, {{Log}}]" >
+          <marker icon="{{customIcon}}" position ="[{{Lat}}, {{Log}}]" title="{{Nombre}}" animation="Animation.DROP" ></marker>
+        <div ng-repeat="amigo in listadoAmigos">
+            <marker  icon="{{amigo.avatar}}" position ="[{{amigo.latitud}}, {{amigo.longitud}}]"  animation="Animation.DROP" ></marker>
+            </ng-map>
+            </div>
 
-  <div ng-if="friend" ui-grid="gridAmigos" class="myGrid"
-    ui-grid-pagination
-    ui-grid-resize-columns>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div ng-if="friend" ui-grid="gridAmigos" class="myGrid" style="width:100%"
+        ui-grid-pagination
+        ui-grid-resize-columns>
+      </div>
+    </div>
   </div>
 </div>

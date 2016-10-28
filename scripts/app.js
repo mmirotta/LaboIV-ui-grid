@@ -12,7 +12,7 @@ angular
     )
   .config(function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('simple');
+    $urlRouterProvider.otherwise('bandera');
     $stateProvider
 
     .state('simple', {
@@ -39,9 +39,17 @@ angular
       url: '/modificar',
       templateUrl: 'views/modificar.html',
       controller:'ModificarCtrl'
-    }).state('ConfiguradoTP', {
+    })
+
+    .state('ConfiguradoTP', {
       url: '/ConfiguradoTP',
       templateUrl: 'views/ConfiguradoTP.html',
       controller:'ConfiguradoTP'
+    })
+
+    .state('bandera', {
+      url: '/bandera',
+      templateUrl: 'views/bandera.html',
+      controller:'BanderaCtrl'
     })
   });
