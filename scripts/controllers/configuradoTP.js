@@ -68,22 +68,7 @@ angular
       i18nService.setCurrentLang('es');
 
       $scope.gridAmigos.data = $scope.Listado;
-    }
-
-
-    $scope.MostrarData= function(row){
-      $scope.lat=row.latitud;
-      $scope.lon=row.logitud;
-      $scope.avatar=row.avatar;
-      $scope.nombre=row.nombre;
-      $scope.avatar=row.avatar;
-      $scope.customIcon = {
-              "scaledSize": [150, 150],
-              "url":  $scope.avatar
-          };
-    }
-
-
+    };
 
     $scope.Mapa=function (row){
       $scope.map = true;
@@ -108,7 +93,6 @@ angular
     data.data100().then(function(rta){
       // Cargo los datos en la grilla.
       $scope.gridOptions.data = rta;
-      console.info(rta);
     });
 
     function columAmigos () {
