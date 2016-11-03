@@ -15,6 +15,11 @@ angular
     $urlRouterProvider.otherwise('bandera');
     $stateProvider
 
+    .state('factory', {
+      url: '/factory',
+      templateUrl: 'views/config.html',
+      controller:'FactoryCtrl'
+    })
     .state('simple', {
       url: '/simple',
       templateUrl: 'views/simple.html',
