@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('FactoryCtrl', function($scope, data, Bandera, factoryBandera, i18nService, uiGridConstants) {
+  .controller('FactoryConServicioCtrl', function($scope, data, Bandera, factoryBandera, factoryConServicioBandera, i18nService, uiGridConstants) {
     $scope.titulo = "Configuracion Campos";
     // Objeto de configuracion de la grilla.
     $scope.gridOptions = {};
@@ -13,9 +13,10 @@ angular
     // Configuracion del idioma.
     i18nService.setCurrentLang('es');
 
-    factoryBandera.TraerTodos().then(function(rta){
+    factoryConServicioBandera.TraerUnPais('Argentina').then(function(rta){
       // Cargo los datos en la grilla.
       $scope.gridOptions.data = rta;
+      console.info(rta);
     });
 
     console.info(factoryBandera);

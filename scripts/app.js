@@ -20,6 +20,11 @@ angular
       templateUrl: 'views/config.html',
       controller:'FactoryCtrl'
     })
+    .state('factoryConServicio', {
+      url: '/factoryConServicio',
+      templateUrl: 'views/config.html',
+      controller:'FactoryConServicioCtrl'
+    })
     .state('simple', {
       url: '/simple',
       templateUrl: 'views/simple.html',
