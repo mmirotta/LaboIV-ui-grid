@@ -31,6 +31,29 @@ angular
       templateUrl: "templates/templateTitulo.html"
     };
 
+  }).directive('utnBandera', function() {
+
+    return {
+      scope:{
+        nombrePais: '@nombrepais',
+        fotoBandera: '@fotobandera'
+      },
+      replace: true,
+      restrict: "EA", 
+      templateUrl: "templates/templateBandera.html"
+    };
+
+  }).directive('utnBanderaObj', function() {
+
+    return {
+      scope:{
+        miBandera: '=banderita'
+      },
+      replace: true,
+      restrict: "EA", 
+      templateUrl: "templates/templateBandera.html"
+    };
+
   })
 
 

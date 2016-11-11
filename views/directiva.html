@@ -4,7 +4,7 @@
 	<title>Directivas</title>
 </head>
 <body>
-	<utn-saludo></utn-saludo>
+<!-- 	<utn-saludo></utn-saludo>
 	<div>
 		<utn-saludo></utn-saludo>
 	</div>
@@ -16,9 +16,15 @@
 	</div>
 	<div class="utn-saludo-dos">
 	</div>
-	<!-- directive: utn-saludo-dos -->
+	 directive: utn-saludo-dos 
 	<utn-titulo></utn-titulo>
-	<utn-titulo-parametro miparametro="Nuevo titulo"></utn-titulo-parametro>
+	<utn-titulo-parametro miparametro="Nuevo titulo"></utn-titulo-parametro> 
+	<div ng-repeat="bandera in listadoDeBanderas">
+		<utn-bandera nombrepais="{{bandera.Nombre}}" fotobandera="{{bandera.BanderaChica}}"></utn-bandera>
+	</div>-->
+	<div ng-repeat="bandera in listadoDeBanderas">
+		<utn-bandera-obj banderita="bandera"></utn-bandera-obj>
+	</div>
 </body>
 </html>
 </div>
